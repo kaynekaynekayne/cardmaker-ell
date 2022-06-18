@@ -27,7 +27,7 @@ const CardAddForm = ({onAdd}) => {
             fileURL:'',
         }
         formRef.current.reset();
-        onAdd(card);
+        onAdd(card); //새로운 카드 만드는 함수
     };
 
     return(
