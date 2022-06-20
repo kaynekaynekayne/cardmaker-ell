@@ -11,7 +11,6 @@ const CardEditForm = ({FileInput, card,createOrUpdateCard, deleteCard}) => {
         message,
         theme,
         fileName,
-        fileURL
     }=card;
 
     const onFileChange=file=>{
@@ -28,7 +27,9 @@ const CardEditForm = ({FileInput, card,createOrUpdateCard, deleteCard}) => {
             return;
         }
         e.preventDefault();
+        console.log(e.currentTarget.name)
         console.log(e.currentTarget.value)
+        
         createOrUpdateCard({
             ...card,
             [e.currentTarget.name]:e.currentTarget.value
@@ -81,7 +82,7 @@ const CardEditForm = ({FileInput, card,createOrUpdateCard, deleteCard}) => {
                 onChange={onChange}></textarea>
             
             <div className={styles.fileInput}>
-                <FileInput name={name} onFileChange={onFileChange} />
+                <FileInput name={fileName} onFileChange={onFileChange} />
             </div>
             <Button name="Delete" onClick={onSubmit}/>
 

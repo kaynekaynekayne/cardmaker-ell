@@ -4,6 +4,8 @@
     width:100%;
     height:100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .input{
@@ -12,10 +14,37 @@
 
 .button{
     width:100%;
+    height:100%;
     background-color: makerLightGrey;
     font-weight: bold;
     cursor:pointer;
     border:0;
     outline:0;
     font-size:0.8rem;
+}
+
+.button.grey{
+    background-color:grey;
+}
+
+.button.pink{
+    background-color: lightpink;
+}
+
+.loading{
+    width:1.5em;
+    height:1.5em;
+    border-radius:50%;
+    border:3px solid lightblue;
+    border-top:3px solid rgb(221, 213, 238);
+    animation:spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
 }
