@@ -6,7 +6,7 @@ import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 import { useNavigate } from 'react-router-dom';
 
-const Maker = ({authService}) => {
+const Maker = ({authService,FileInput}) => {
 
     const [cards,setCards]=useState({
         '1':{
@@ -85,7 +85,8 @@ const Maker = ({authService}) => {
                 <Editor 
                     cards={cards} 
                     createOrUpdateCard={createOrUpdateCard}
-                    deleteCard={deleteCard}    
+                    deleteCard={deleteCard}
+                    FileInput={FileInput} 
                 />
                 <Preview cards={cards}/>
             </div>
