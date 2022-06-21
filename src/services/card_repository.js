@@ -9,6 +9,7 @@ class CardRepository{
         const query=ref(this.db, `${userId}/cards`);
         onValue(query, (snapshot)=>{
             const value=snapshot.val();
+            //val 안에 해당하는 데이터 들어있음
             value && onUpdate(value);
         });
         return ()=>off(query);

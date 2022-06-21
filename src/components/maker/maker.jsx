@@ -25,7 +25,7 @@ const Maker = ({authService,FileInput,cardRepository}) => {
             setCards(cards);
         })
         return ()=>stopSync();
-    },[userId]);
+    },[userId, cardRepository]);
 
     useEffect(()=>{//로그인에 관련된 것
         authService.onAuthChange(user=>{
@@ -35,7 +35,7 @@ const Maker = ({authService,FileInput,cardRepository}) => {
                 navigate("/");
             }
         });
-    })
+    },[userId, navigate, authService])
 
 
     const createOrUpdateCard=(card)=>{
